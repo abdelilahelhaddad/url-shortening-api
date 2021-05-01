@@ -15,7 +15,66 @@ $-N-Grayish-Violet: hsl(257, 7%, 63%);
 $-N-Very-Dark-Blue: hsl(255, 11%, 22%);
 $-N-Very-Dark-Violet: hsl(260, 8%, 14%);
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: $-N-Grayish-Violet;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  width: 1100px;
+  max-width: 100%;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  color: #FFF;
+  background: $-P-Cyan;
+  border-radius: 100vh;
+}
+
+#header {
+  #navbar {
+    padding: 1.5rem 0;
+
+    .left,
+    .nav-list {
+      display: flex;
+    }
+
+    .left,
+    .right {
+      flex: 1 0 50%;
+    }
+
+    .right>.nav-list {
+      justify-content: flex-end;
+    }
+
+    .logo {
+      margin-right: 2.5rem;
+    }
+
+    .nav-list>li {
+      margin-right: 1.5rem;
+    }
+
+  }
 }
