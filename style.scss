@@ -116,3 +116,38 @@ ul {
     }
   }
 }
+
+#main {
+  margin-top: 7rem;
+  background-color: $-N-Gray;
+
+  #shorten {
+    flex-direction: column;
+
+    .short-link {
+      background: $-N-Very-Dark-Violet url("./images/bg-shorten-desktop.svg") no-repeat;
+      border-radius: 8px;
+      margin-top: -3.5rem;
+      z-index: 999;
+
+      form {
+        padding: 2rem 3rem;
+        display: flex;
+
+        input {
+          padding: 0.7rem 1.3rem;
+          width: 80%;
+          border-radius: 8px;
+          outline: none;
+          border: none;
+        }
+
+        a {
+          border-radius: 5px;
+          margin-left: 1rem;
+        }
+      }
+    }
+
+  }
+}

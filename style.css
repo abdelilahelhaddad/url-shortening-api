@@ -111,4 +111,43 @@ ul {
   position: relative;
   right: -8%;
 }
+
+#main {
+  margin-top: 7rem;
+  background-color: #bfbfbf;
+}
+
+#main #shorten {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#main #shorten .short-link {
+  background: #232127 url("./images/bg-shorten-desktop.svg") no-repeat;
+  border-radius: 8px;
+  margin-top: -3.5rem;
+  z-index: 999;
+}
+
+#main #shorten .short-link form {
+  padding: 2rem 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#main #shorten .short-link form input {
+  padding: 0.7rem 1.3rem;
+  width: 80%;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+}
+
+#main #shorten .short-link form a {
+  border-radius: 5px;
+  margin-left: 1rem;
+}
 /*# sourceMappingURL=style.css.map */
