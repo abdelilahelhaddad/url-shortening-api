@@ -166,38 +166,81 @@ ul {
 
       .features {
         display: flex;
-        width: 100%;
+        justify-content: space-around;
+        align-items: center;
         gap: 1rem;
 
         .brand,
         .record,
         .custom {
           background: #FFF;
-          padding: 1rem 1.5rem;
+          padding: 1rem 1.5rem 2.25rem 1.5rem;
           border-radius: 8px;
 
           .icon {
             background-color: $-N-Very-Dark-Blue;
             display: inline-block;
             border-radius: 50%;
-            // margin: 1rem;
-            padding: 1rem;
+            padding: 0.5rem;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin-top: -3.2rem;
 
-            // width: 100px;
-            // height: 100px;
             img {
-              width: 40px;
-              height: 40px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 30px;
+              height: 30px;
             }
           }
 
           h3 {
             font-size: 18px;
+            margin-top: 1rem;
           }
 
           p {
             font-size: 14px;
+            margin-top: 0.5rem;
           }
+        }
+
+        .brand {
+          margin-top: 3rem;
+        }
+
+        .record {
+          margin-top: 8rem;
+          position: relative;
+        }
+
+        .record::before {
+          content: "";
+          background: $-P-Cyan;
+          width: 50px;
+          height: 5px;
+          position: absolute;
+          left: -10%;
+          top: 45%;
+          z-index: -999;
+        }
+
+        .record::after {
+          content: "";
+          background: $-P-Cyan;
+          width: 50px;
+          height: 5px;
+          position: absolute;
+          right: -10%;
+          top: 45%;
+          z-index: -999;
+        }
+
+        .custom {
+          margin-top: 13rem;
         }
       }
     }

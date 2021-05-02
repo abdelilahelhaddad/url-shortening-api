@@ -171,7 +171,11 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1rem;
 }
 
@@ -179,7 +183,7 @@ ul {
 #main #shorten .statistics .features .record,
 #main #shorten .statistics .features .custom {
   background: #FFF;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 2.25rem 1.5rem;
   border-radius: 8px;
 }
 
@@ -189,25 +193,71 @@ ul {
   background-color: #35323e;
   display: inline-block;
   border-radius: 50%;
-  padding: 1rem;
+  padding: 0.5rem;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-top: -3.2rem;
 }
 
 #main #shorten .statistics .features .brand .icon img,
 #main #shorten .statistics .features .record .icon img,
 #main #shorten .statistics .features .custom .icon img {
-  width: 40px;
-  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
 }
 
 #main #shorten .statistics .features .brand h3,
 #main #shorten .statistics .features .record h3,
 #main #shorten .statistics .features .custom h3 {
   font-size: 18px;
+  margin-top: 1rem;
 }
 
 #main #shorten .statistics .features .brand p,
 #main #shorten .statistics .features .record p,
 #main #shorten .statistics .features .custom p {
   font-size: 14px;
+  margin-top: 0.5rem;
+}
+
+#main #shorten .statistics .features .brand {
+  margin-top: 3rem;
+}
+
+#main #shorten .statistics .features .record {
+  margin-top: 8rem;
+  position: relative;
+}
+
+#main #shorten .statistics .features .record::before {
+  content: "";
+  background: #2acfcf;
+  width: 50px;
+  height: 5px;
+  position: absolute;
+  left: -10%;
+  top: 45%;
+  z-index: -999;
+}
+
+#main #shorten .statistics .features .record::after {
+  content: "";
+  background: #2acfcf;
+  width: 50px;
+  height: 5px;
+  position: absolute;
+  right: -10%;
+  top: 45%;
+  z-index: -999;
+}
+
+#main #shorten .statistics .features .custom {
+  margin-top: 13rem;
 }
 /*# sourceMappingURL=style.css.map */
