@@ -58,6 +58,7 @@ ul {
 }
 
 #header {
+
   #navbar {
     padding: 2rem 0;
 
@@ -108,18 +109,14 @@ ul {
 
     .hero-illustration {
       flex: 1 0 50%;
-
-      img {
-        position: relative;
-        right: -8%;
-      }
+      transform: translateX(50px);
     }
   }
 }
 
 #main {
   margin-top: 7rem;
-  background-color: $-N-Gray;
+  background-color: rgba($-N-Gray, $alpha: 0.2);
 
   #shorten {
     flex-direction: column;
@@ -145,6 +142,62 @@ ul {
         a {
           border-radius: 5px;
           margin-left: 1rem;
+        }
+      }
+    }
+
+    .statistics {
+      margin: 7rem 0;
+
+      &>h2,
+      &>p {
+        text-align: center;
+      }
+
+      h2,
+      h3 {
+        color: $-N-Very-Dark-Blue;
+      }
+
+      p {
+        font-size: 14px;
+        color: $-N-Grayish-Violet;
+      }
+
+      .features {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+
+        .brand,
+        .record,
+        .custom {
+          background: #FFF;
+          padding: 1rem 1.5rem;
+          border-radius: 8px;
+
+          .icon {
+            background-color: $-N-Very-Dark-Blue;
+            display: inline-block;
+            border-radius: 50%;
+            // margin: 1rem;
+            padding: 1rem;
+
+            // width: 100px;
+            // height: 100px;
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+
+          h3 {
+            font-size: 18px;
+          }
+
+          p {
+            font-size: 14px;
+          }
         }
       }
     }
