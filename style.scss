@@ -5,7 +5,7 @@ $font-weight-500:500;
 $font-weight-700:700;
 
 /* Color */
-$-P-Cyan: hsl(180, 66%, 49%);
+$-P-Cyan: hsl(180, 50%, 60%);
 $-P-Dark-Violet: hsl(257, 27%, 26%);
 
 $-S-Red: hsl(0, 87%, 67%);
@@ -55,6 +55,11 @@ ul {
   color: #FFF;
   background: $-P-Cyan;
   border-radius: 100vh;
+
+  &:hover {
+    background: hsl(180, 72%, 76%);
+    color: #FFF !important;
+  }
 }
 
 #header {
@@ -84,6 +89,10 @@ ul {
 
     .nav-list>li {
       margin-left: 1.5rem;
+
+      & a:hover {
+        color: $-N-Very-Dark-Violet;
+      }
     }
 
   }
@@ -277,8 +286,16 @@ footer {
     }
 
     ul {
+      li {
+        margin-bottom: 0.5rem;
+
+        a:hover {
+          color: $-P-Cyan;
+        }
+      }
+
       li:first-child {
-        margin-bottom: 0.7rem;
+        margin-bottom: 1rem;
 
         a {
           color: #FFF;
@@ -286,8 +303,16 @@ footer {
       }
     }
 
-    .socials>img {
+    .socials>a {
       margin-left: 1rem;
+
+      &:hover {
+        svg {
+          path {
+            fill: $-P-Cyan;
+          }
+        }
+      }
     }
   }
 }

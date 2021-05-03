@@ -40,8 +40,13 @@ ul {
 .btn {
   padding: 0.5rem 1.5rem;
   color: #FFF;
-  background: #2acfcf;
+  background: #66cccc;
   border-radius: 100vh;
+}
+
+.btn:hover {
+  background: #96eeee;
+  color: #FFF !important;
 }
 
 #header #navbar {
@@ -78,6 +83,10 @@ ul {
 
 #header #navbar .nav-list > li {
   margin-left: 1.5rem;
+}
+
+#header #navbar .nav-list > li a:hover {
+  color: #232127;
 }
 
 #header #hero .hero-content {
@@ -237,7 +246,7 @@ ul {
 
 #main #shorten .statistics .features .record::before {
   content: "";
-  background: #2acfcf;
+  background: #66cccc;
   width: 50px;
   height: 5px;
   position: absolute;
@@ -248,7 +257,7 @@ ul {
 
 #main #shorten .statistics .features .record::after {
   content: "";
-  background: #2acfcf;
+  background: #66cccc;
   width: 50px;
   height: 5px;
   position: absolute;
@@ -291,15 +300,27 @@ footer .container .logo svg path {
   fill: #FFF;
 }
 
+footer .container ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer .container ul li a:hover {
+  color: #66cccc;
+}
+
 footer .container ul li:first-child {
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
 }
 
 footer .container ul li:first-child a {
   color: #FFF;
 }
 
-footer .container .socials > img {
+footer .container .socials > a {
   margin-left: 1rem;
+}
+
+footer .container .socials > a:hover svg path {
+  fill: #66cccc;
 }
 /*# sourceMappingURL=style.css.map */
