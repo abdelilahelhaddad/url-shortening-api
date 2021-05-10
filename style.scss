@@ -72,11 +72,66 @@ img {
 #navbar {
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
 
   .left,
   .right {
     .nav-list {
       display: none;
+    }
+  }
+
+  &.active {
+    position: relative;
+
+    .nav-list {
+      background: $-P-Dark-Violet;
+      width: 90%;
+      display: block;
+      position: absolute;
+      text-align: center;
+      padding: 0 2rem;
+      z-index: 999;
+      left: 5.4%;
+
+      li {
+        margin-top: 1.5rem;
+
+        a {
+          color: #FFF;
+          width: 100%;
+          ;
+        }
+      }
+    }
+
+    .left {
+      .nav-list {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        li:first-child {
+          padding-top: 1rem;
+        }
+      }
+    }
+
+    .right {
+      .nav-list {
+        margin-top: 13rem;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        z-index: 998;
+
+        li:first-child {
+          border-top: 1px solid $-N-Grayish-Violet;
+          padding-top: 1.5rem;
+        }
+
+        li:last-child {
+          padding-bottom: 2.5rem;
+        }
+      }
     }
   }
 }
