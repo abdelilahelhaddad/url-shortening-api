@@ -166,6 +166,39 @@ img {
       }
     }
 
+    .shorted {
+      background: #FFF;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: left;
+      margin-bottom: 2rem;
+      transform: translateY(-42%);
+
+      .original-link {
+        padding-bottom: 0.7rem;
+        display: inline-block;
+      }
+
+      .shorted-link-copy {
+        border-top: 1px solid $-N-Gray;
+        margin: 0 -1rem;
+        padding: 0.7rem 1rem 0 1rem;
+
+        .shorted-link {
+          color: $-P-Cyan;
+          display: inline-block;
+        }
+
+        .btn {
+          border-radius: 5px;
+          width: 100%;
+          padding: 0.35rem 3rem;
+          margin-top: 0.7rem;
+          text-align: center;
+        }
+      }
+    }
+
     .statistics {
       text-align: center;
 
