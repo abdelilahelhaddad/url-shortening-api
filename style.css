@@ -55,7 +55,7 @@ img {
 
 .btn {
   display: inline-block;
-  padding: 1rem 3rem;
+  padding: 0.65rem 3rem;
   background: #66cccc;
   color: #FFF;
   border-radius: 100vh;
@@ -135,10 +135,63 @@ img {
 }
 
 #main #shorten .short-link form input {
-  padding: 1rem 3rem;
+  padding: 1rem;
   border-radius: 8px;
   outline: none;
   border: none;
+}
+
+#main #shorten .short-link form input::-webkit-input-placeholder {
+  font-weight: 700;
+  color: #9e9aa7;
+  font-size: 14px;
+}
+
+#main #shorten .short-link form input:-ms-input-placeholder {
+  font-weight: 700;
+  color: #9e9aa7;
+  font-size: 14px;
+}
+
+#main #shorten .short-link form input::-ms-input-placeholder {
+  font-weight: 700;
+  color: #9e9aa7;
+  font-size: 14px;
+}
+
+#main #shorten .short-link form input::placeholder {
+  font-weight: 700;
+  color: #9e9aa7;
+  font-size: 14px;
+}
+
+#main #shorten .short-link form input.error {
+  border: 3px solid #f46262;
+  position: relative;
+}
+
+#main #shorten .short-link form input.error::-webkit-input-placeholder {
+  color: #f46262;
+}
+
+#main #shorten .short-link form input.error:-ms-input-placeholder {
+  color: #f46262;
+}
+
+#main #shorten .short-link form input.error::-ms-input-placeholder {
+  color: #f46262;
+}
+
+#main #shorten .short-link form input.error::placeholder {
+  color: #f46262;
+}
+
+#main #shorten .short-link form span {
+  display: none;
+  color: #f46262;
+  font-size: 12px;
+  margin-top: 0.2rem;
+  font-style: italic;
 }
 
 #main #shorten .short-link form a {

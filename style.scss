@@ -63,7 +63,7 @@ img {
 
 .btn {
   display: inline-block;
-  padding: 1rem 3rem;
+  padding: 0.65rem 3rem;
   background: $-P-Cyan;
   color: #FFF;
   border-radius: 100vh;
@@ -129,10 +129,33 @@ img {
         padding: 1.5rem;
 
         input {
-          padding: 1rem 3rem;
+          padding: 1rem;
           border-radius: 8px;
           outline: none;
           border: none;
+
+          &::placeholder {
+            font-weight: $font-weight-700;
+            color: $-N-Grayish-Violet;
+            font-size: 14px;
+          }
+
+          &.error {
+            border: 3px solid $-S-Red;
+            position: relative;
+
+            &::placeholder {
+              color: $-S-Red;
+            }
+          }
+        }
+
+        span {
+          display: none;
+          color: $-S-Red;
+          font-size: 12px;
+          margin-top: 0.2rem;
+          font-style: italic;
         }
 
         a {
@@ -236,10 +259,6 @@ img {
           bottom: -40%;
           z-index: -999;
         }
-
-        // .custom {
-        //   margin-top: 11rem;
-        // }
       }
     }
   }
