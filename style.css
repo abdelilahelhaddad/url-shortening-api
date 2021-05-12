@@ -15,6 +15,12 @@ body {
   font-size: 18px;
 }
 
+@media screen and (min-width: 1100px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,6 +33,16 @@ body {
   min-width: 375px;
   width: 100%;
   padding: 20px;
+}
+
+@media screen and (min-width: 1100px) {
+  .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    min-width: 1100px;
+  }
 }
 
 a {
@@ -126,6 +142,48 @@ img {
   padding-bottom: 2.5rem;
 }
 
+@media screen and (min-width: 1100px) {
+  #navbar .left,
+  #navbar .right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #navbar .left .nav-list,
+  #navbar .right .nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #navbar .right > .nav-list {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  #navbar .logo {
+    margin-right: 1rem;
+  }
+  #navbar .nav-list > li {
+    margin-left: 1.5rem;
+  }
+  #navbar .nav-list > li a:hover {
+    color: #232127;
+  }
+  #navbar .burger-menu {
+    display: none;
+  }
+}
+
 #hero {
   overflow: hidden;
 }
@@ -158,6 +216,47 @@ img {
   -webkit-transform: translateX(17%);
           transform: translateX(17%);
   width: 100vw;
+}
+
+@media screen and (min-width: 1100px) {
+  #hero {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  #hero .hero-content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  #hero .hero-content h1 {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 4.5rem;
+    color: #35323e;
+  }
+  #hero .hero-content p {
+    color: #9e9aa7;
+    width: 80%;
+  }
+  #hero .hero-illustration {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  #hero .hero-illustration img {
+    width: 100%;
+  }
 }
 
 #main {
