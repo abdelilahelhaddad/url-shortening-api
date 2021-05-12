@@ -497,6 +497,100 @@ s #main #shorten .statistics > h2,
   z-index: -999;
 }
 
+@media screen and (min-width: 1100px) {
+  #main #shorten .short-link {
+    -webkit-transform: translateY(-14%);
+            transform: translateY(-14%);
+  }
+  #main #shorten .short-link form {
+    background: #3b3054 url("./images/bg-shorten-desktop.svg") no-repeat top right;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 1.5rem;
+  }
+  #main #shorten .short-link form input {
+    padding: 0.7rem 1.3rem;
+    width: 80%;
+  }
+  #main #shorten .short-link form input::-webkit-input-placeholder {
+    font-weight: 700;
+    color: #9e9aa7;
+    font-size: 14px;
+  }
+  #main #shorten .short-link form input:-ms-input-placeholder {
+    font-weight: 700;
+    color: #9e9aa7;
+    font-size: 14px;
+  }
+  #main #shorten .short-link form input::-ms-input-placeholder {
+    font-weight: 700;
+    color: #9e9aa7;
+    font-size: 14px;
+  }
+  #main #shorten .short-link form input::placeholder {
+    font-weight: 700;
+    color: #9e9aa7;
+    font-size: 14px;
+  }
+  #main #shorten .short-link form input.error {
+    border: 3px solid #f46262;
+    position: relative;
+  }
+  #main #shorten .short-link form input.error::-webkit-input-placeholder {
+    color: #f46262;
+  }
+  #main #shorten .short-link form input.error:-ms-input-placeholder {
+    color: #f46262;
+  }
+  #main #shorten .short-link form input.error::-ms-input-placeholder {
+    color: #f46262;
+  }
+  #main #shorten .short-link form input.error::placeholder {
+    color: #f46262;
+  }
+  #main #shorten .short-link form span {
+    display: none;
+    color: #f46262;
+    font-size: 12px;
+    margin-top: 0.2rem;
+    font-style: italic;
+  }
+  #main #shorten .short-link form a {
+    margin-left: 1rem;
+  }
+  #main #shorten .shorted {
+    background: #FFF;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 2rem;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  #main #shorten .shorted .original-link {
+    padding-bottom: 0.7rem;
+    display: inline-block;
+  }
+  #main #shorten .shorted .shorted-link-copy {
+    border-top: 1px solid #bfbfbf;
+    margin: 0 -1rem;
+    padding: 0.7rem 1rem 0 1rem;
+  }
+  #main #shorten .shorted .shorted-link-copy .shorted-link {
+    color: #66cccc;
+    display: inline-block;
+  }
+  #main #shorten .shorted .shorted-link-copy .btn {
+    border-radius: 5px;
+    width: 100%;
+    padding: 0.35rem 3rem;
+    margin-top: 0.7rem;
+    text-align: center;
+  }
+}
+
 #boost {
   background: #3b3054 url("./images/bg-boost-mobile.svg") no-repeat center center;
   padding: 4rem 0;
