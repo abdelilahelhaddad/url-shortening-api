@@ -528,9 +528,12 @@ img {
       }
 
       .statistics {
-        margin: 6rem 10%;
+        margin: 4rem 10%;
 
-        &>p {}
+        &>p {
+          width: 400px;
+          margin: 0 auto;
+        }
 
         .features {
           flex-direction: row;

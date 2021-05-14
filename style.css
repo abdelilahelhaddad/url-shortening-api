@@ -624,7 +624,11 @@ s #main #shorten .statistics > h2,
     text-align: center;
   }
   #main #shorten .statistics {
-    margin: 6rem 10%;
+    margin: 4rem 10%;
+  }
+  #main #shorten .statistics > p {
+    width: 400px;
+    margin: 0 auto;
   }
   #main #shorten .statistics .features {
     -webkit-box-orient: horizontal;
