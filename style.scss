@@ -151,6 +151,7 @@ img {
       display: flex;
       flex-direction: row;
       align-items: center;
+      margin: 0 10%;
 
       .nav-list {
         display: flex;
@@ -213,10 +214,12 @@ img {
   @media screen and (min-width:1100px) {
     flex-direction: row;
 
+
     .hero-content {
       flex: 1 0 50%;
-      align-self: center;
       order: 1;
+      text-align: left;
+      margin: 0 10%;
 
       h1 {
         font-weight: $font-weight-700;
@@ -234,10 +237,10 @@ img {
     .hero-illustration {
       flex: 1 0 50%;
       order: 2;
-      // transform: translateX(50px);
 
       img {
         width: 100%;
+        transform: translateX(-20%);
       }
     }
   }
@@ -429,17 +432,23 @@ img {
 
   @media screen and (min-width:1100px) {
     #shorten {
+      flex-direction: column;
+
       .short-link {
-        transform: translateY(-14%);
+        transform: translateY(-66%);
+        margin: 0 10%;
 
         form {
           background: $-P-Dark-Violet url("./images/bg-shorten-desktop.svg") no-repeat top right;
           flex-direction: row;
           padding: 1.5rem;
+          width: 100%;
+          gap: 1rem;
 
           input {
             padding: 0.7rem 1.3rem;
-            width: 80%;
+            width: 100%;
+            height: 3rem;
 
             &::placeholder {
               font-weight: $font-weight-700;
@@ -466,28 +475,38 @@ img {
           }
 
           a {
-            margin-left: 1rem;
+            margin: 0;
+            width: 20%;
+            font-size: 16px;
+            height: 3rem;
           }
         }
       }
 
       .shorted {
-        background: #FFF;
-        padding: 1rem;
-        border-radius: 8px;
-        text-align: left;
-        margin-bottom: 2rem;
+        // background: #FFF;
+        // padding: 1rem;
+        // border-radius: 8px;
+        // text-align: left;
+        // margin-bottom: 2rem;
+        margin: 1rem 10%;
         transform: translateY(0);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         .original-link {
-          padding-bottom: 0.7rem;
+          padding-bottom: 0rem;
           display: inline-block;
         }
 
         .shorted-link-copy {
-          border-top: 1px solid $-N-Gray;
+          border-top: none;
           margin: 0 -1rem;
           padding: 0.7rem 1rem 0 1rem;
+          display: flex;
+          gap: 1rem;
+          align-items: center;
 
           .shorted-link {
             color: $-P-Cyan;
@@ -498,7 +517,7 @@ img {
             border-radius: 5px;
             width: 100%;
             padding: 0.35rem 3rem;
-            margin-top: 0.7rem;
+            margin-top: 0;
             text-align: center;
           }
         }
@@ -517,6 +536,9 @@ img {
     margin-bottom: 1rem;
   }
 
+  @media screen and(min-width:1100px) {
+    background: $-P-Dark-Violet url("./images/bg-boost-desktop.svg")
+  }
 }
 
 footer {
@@ -559,6 +581,18 @@ footer {
 
       a {
         margin-left: 1rem;
+      }
+    }
+  }
+
+  @media screen and(min-width:1100px) {
+    .container {
+      .logo {
+        margin-left: 10%;
+      }
+
+      .socials {
+        margin-right: 10%;
       }
     }
   }
