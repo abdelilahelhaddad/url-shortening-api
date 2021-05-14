@@ -170,6 +170,14 @@ img {
     .nav-list>li {
       margin-left: 1.5rem;
 
+      a {
+        color: $-N-Very-Dark-Violet;
+      }
+
+      a.btn {
+        color: #FFF;
+      }
+
       & a:hover {
         color: $-N-Very-Dark-Violet;
       }
@@ -484,7 +492,7 @@ img {
       }
 
       .shorted {
-        margin: 1rem 10%;
+        margin: 0rem 10%;
         transform: translateY(0);
         display: flex;
         justify-content: space-between;
@@ -493,14 +501,15 @@ img {
         .original-link {
           padding-bottom: 0rem;
           display: inline-block;
+          color: $-N-Very-Dark-Violet;
         }
 
         .shorted-link-copy {
           border-top: none;
           margin: 0 -1rem;
-          padding: 0.7rem 1rem 0 1rem;
+          padding: 0rem 1rem 0 1rem;
           display: flex;
-          gap: 1rem;
+          gap: 1.5rem;
           align-items: center;
 
           .shorted-link {
@@ -511,9 +520,47 @@ img {
           .btn {
             border-radius: 5px;
             width: 100%;
-            padding: 0.35rem 3rem;
+            padding: 0.35rem 2.2rem;
             margin-top: 0;
             text-align: center;
+          }
+        }
+      }
+
+      .statistics {
+        margin: 6rem 10%;
+
+        &>p {}
+
+        .features {
+          flex-direction: row;
+          margin-top: 2rem;
+          gap: 1.5rem;
+
+          .brand {
+            margin-top: 0rem;
+          }
+
+          .record {
+            margin-top: 4rem;
+          }
+
+          .custom {
+            margin-top: 8rem;
+          }
+
+          .record::before {
+            width: 100px;
+            height: 5px;
+            left: -15%;
+            top: 50%;
+          }
+
+          .record::after {
+            width: 100px;
+            height: 5px;
+            right: -15%;
+            top: 50%;
           }
         }
       }

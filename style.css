@@ -177,6 +177,12 @@ img {
   #navbar .nav-list > li {
     margin-left: 1.5rem;
   }
+  #navbar .nav-list > li a {
+    color: #232127;
+  }
+  #navbar .nav-list > li a.btn {
+    color: #FFF;
+  }
   #navbar .nav-list > li a:hover {
     color: #232127;
   }
@@ -576,7 +582,7 @@ s #main #shorten .statistics > h2,
     height: 3rem;
   }
   #main #shorten .shorted {
-    margin: 1rem 10%;
+    margin: 0rem 10%;
     -webkit-transform: translateY(0);
             transform: translateY(0);
     display: -webkit-box;
@@ -592,15 +598,16 @@ s #main #shorten .statistics > h2,
   #main #shorten .shorted .original-link {
     padding-bottom: 0rem;
     display: inline-block;
+    color: #232127;
   }
   #main #shorten .shorted .shorted-link-copy {
     border-top: none;
     margin: 0 -1rem;
-    padding: 0.7rem 1rem 0 1rem;
+    padding: 0rem 1rem 0 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -612,9 +619,41 @@ s #main #shorten .statistics > h2,
   #main #shorten .shorted .shorted-link-copy .btn {
     border-radius: 5px;
     width: 100%;
-    padding: 0.35rem 3rem;
+    padding: 0.35rem 2.2rem;
     margin-top: 0;
     text-align: center;
+  }
+  #main #shorten .statistics {
+    margin: 6rem 10%;
+  }
+  #main #shorten .statistics .features {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+  #main #shorten .statistics .features .brand {
+    margin-top: 0rem;
+  }
+  #main #shorten .statistics .features .record {
+    margin-top: 4rem;
+  }
+  #main #shorten .statistics .features .custom {
+    margin-top: 8rem;
+  }
+  #main #shorten .statistics .features .record::before {
+    width: 100px;
+    height: 5px;
+    left: -15%;
+    top: 50%;
+  }
+  #main #shorten .statistics .features .record::after {
+    width: 100px;
+    height: 5px;
+    right: -15%;
+    top: 50%;
   }
 }
 
