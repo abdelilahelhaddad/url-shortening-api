@@ -8,16 +8,76 @@ burgerMenu.addEventListener("click", () => {
 const URLbtn = document.querySelector(".URLbtn");
 const url = document.querySelector("#url");
 const SpanURL = document.querySelector(".error");
+const shortLinkSection = document.querySelector("#short_Link_Section");
 
 URLbtn.addEventListener("click", (e) => {
   e.preventDefault();
   const urlValue = url.value;
-  const pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+  /*https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url*/
+  const pattern = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+  /*https://stackoverflow.com/questions/8498592/extract-hostname-name-from-string*/
+  function extractHostname(url) {
+    var hostname;
+    if (url.indexOf("//") > -1) {
+      hostname = url.split('/')[2];
+    } else {
+      hostname = url.split('/')[0];
+    }
+    hostname = hostname.split(':')[0];
+    hostname = hostname.split('?')[0];
+
+    return hostname;
+  }
+
+  function extractRootDomain(url) {
+    var domain = extractHostname(url),
+      splitArr = domain.split('.'),
+      arrLen = splitArr.length;
+    if (arrLen > 2) {
+      domain = splitArr[arrLen - 2] + '.' + splitArr[arrLen - 1];
+      if (splitArr[arrLen - 2].length == 2 && splitArr[arrLen - 1].length == 2) {
+        domain = splitArr[arrLen - 3] + '.' + domain;
+      }
+    }
+    return domain;
+  }
+
+  const FinalUrl = extractRootDomain(urlValue);
+  console.log(FinalUrl);
+
   if (pattern.test(urlValue)) {
-    alert("Url is valid");
-    return true;
+    getShorten(FinalUrl);
+    // urlValue = "";
   } else {
     url.classList.add("error");
     SpanURL.style.display = "block";
   }
-})
+});
+
+function createLinkSection(link) {
+  const HTMLSection = `
+  <div class="shorted">
+  <a href="${url.value}" class="original-link">${url.value}</a>
+  <div class="shorted-link-copy">
+    <a href="${link.result.full_short_link}" class="shorted-link">${link.result.full_short_link}</a>
+    <a href="#" class="btn">Copy</a>
+  </div>
+</div>
+  `;
+
+  shortLinkSection.innerHTML = HTMLSection;
+}
+
+const APIURL = 'https://api.shrtco.de/v2/shorten?url=';
+
+async function getShorten(urll) {
+  try {
+    const {
+      data
+    } = await axios(APIURL + urll);
+
+    createLinkSection(data);
+  } catch (error) {
+    console.log(error)
+  }
+}

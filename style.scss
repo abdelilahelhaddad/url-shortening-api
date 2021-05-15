@@ -649,10 +649,25 @@ footer {
 
       ul {
         text-align: left;
+
+        li {
+
+          a:hover {
+            color: $-P-Cyan;
+          }
+        }
       }
 
       .socials {
         margin-right: 10%;
+
+        a:hover {
+          svg {
+            path {
+              fill: $-P-Cyan;
+            }
+          }
+        }
       }
     }
   }

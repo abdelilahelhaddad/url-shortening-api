@@ -740,8 +740,14 @@ footer .container .socials a {
   footer .container ul {
     text-align: left;
   }
+  footer .container ul li a:hover {
+    color: #66cccc;
+  }
   footer .container .socials {
     margin-right: 10%;
+  }
+  footer .container .socials a:hover svg path {
+    fill: #66cccc;
   }
 }
 /*# sourceMappingURL=style.css.map */
