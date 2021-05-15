@@ -76,6 +76,11 @@ img {
   background: $-P-Cyan;
   color: #FFF;
   border-radius: 100vh;
+
+  &:hover {
+    color: #FFF !important;
+    background: rgba($-P-Cyan, $alpha: 0.8);
+  }
 }
 
 #navbar {
@@ -171,7 +176,7 @@ img {
       margin-left: 1.5rem;
 
       a {
-        color: $-N-Very-Dark-Violet;
+        color: $-N-Grayish-Violet;
       }
 
       a.btn {
@@ -449,7 +454,7 @@ img {
         form {
           background: $-P-Dark-Violet url("./images/bg-shorten-desktop.svg") no-repeat top right;
           flex-direction: row;
-          padding: 1.5rem;
+          padding: 2.5rem;
           width: 100%;
           gap: 1rem;
 
@@ -480,11 +485,13 @@ img {
             font-size: 12px;
             margin-top: 0.2rem;
             font-style: italic;
+            position: absolute;
+            top: 69%;
           }
 
           a {
             margin: 0;
-            width: 20%;
+            width: 22%;
             font-size: 16px;
             height: 3rem;
           }
