@@ -12,7 +12,7 @@ const shortLinkSection = document.querySelector("#short_Link_Section");
 
 URLbtn.addEventListener("click", (e) => {
   e.preventDefault();
-  const urlValue = url.value;
+  let urlValue = url.value;
   /*https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url*/
   const pattern = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
   /*https://stackoverflow.com/questions/8498592/extract-hostname-name-from-string*/
@@ -43,26 +43,26 @@ URLbtn.addEventListener("click", (e) => {
   }
 
   const FinalUrl = extractRootDomain(urlValue);
-  console.log(FinalUrl);
 
   if (pattern.test(urlValue)) {
     getShorten(FinalUrl);
-    // urlValue = "";
+    urlValue = "";
   } else {
     url.classList.add("error");
     SpanURL.style.display = "block";
   }
+
 });
 
 function createLinkSection(link) {
   const HTMLSection = `
   <div class="shorted">
-  <a href="${url.value}" class="original-link">${url.value}</a>
-  <div class="shorted-link-copy">
+    <a href="${url.value}" class="original-link">${url.value}</a>
+    <div class="shorted-link-copy">
     <a href="${link.result.full_short_link}" class="shorted-link">${link.result.full_short_link}</a>
-    <a href="#" class="btn">Copy</a>
+    <a href="#" onclick="copyText()" id="copytext" class="btn">Copy</a>
+    </div>
   </div>
-</div>
   `;
 
   shortLinkSection.innerHTML = HTMLSection;
