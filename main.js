@@ -55,7 +55,9 @@ URLbtn.addEventListener("click", (e) => {
 });
 
 function createLinkSection(link) {
-  const HTMLSection = `
+  var HTMLSection = document.createElement('div');
+
+  HTMLSection.innerHTML = `
   <div class="shorted">
     <a href="${url.value}" class="original-link">${url.value}</a>
     <div class="shorted-link-copy">
@@ -65,7 +67,7 @@ function createLinkSection(link) {
   </div>
   `;
 
-  shortLinkSection.innerHTML = HTMLSection;
+  shortLinkSection.appendChild(HTMLSection);
 }
 
 const APIURL = 'https://api.shrtco.de/v2/shorten?url=';
@@ -80,4 +82,30 @@ async function getShorten(urll) {
   } catch (error) {
     console.log(error)
   }
+  const url = document.querySelector("#url").value;
+  const shortedLink = document.querySelector(".shorted-link").textContent;
+  console.log(url);
+  console.log(shortedLink);
+  if (url && shortedLink) {
+    localStorage.setItem(JSON.stringify(shortedLink), JSON.stringify(url));
+  }
+}
+
+for (let i = 0; i < localStorage.length; i++) {
+  const lsKey = localStorage.key(i);
+  const getValue = JSON.parse(localStorage.getItem(lsKey));
+
+  var HTMLSection = document.createElement('div');
+
+  HTMLSection.innerHTML = `
+  <div class="shorted">
+    <a href="${getValue}" class="original-link">${getValue}</a>
+    <div class="shorted-link-copy">
+    <a href="${lsKey}" class="shorted-link">${lsKey}</a>
+    <a href="#" onclick="copyText()" id="copytext" class="btn">Copy</a>
+    </div>
+  </div>
+  `;
+
+  shortLinkSection.appendChild(HTMLSection);
 }
