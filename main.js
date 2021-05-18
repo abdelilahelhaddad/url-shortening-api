@@ -56,18 +56,17 @@ URLbtn.addEventListener("click", (e) => {
 
 function createLinkSection(link) {
   var HTMLSection = document.createElement('div');
-
+  HTMLSection.className = 'shorted';
   HTMLSection.innerHTML = `
-  <div class="shorted">
     <a href="${url.value}" class="original-link">${url.value}</a>
     <div class="shorted-link-copy">
     <a href="${link.result.full_short_link}" class="shorted-link">${link.result.full_short_link}</a>
-    <a href="#" onclick="copyText()" id="copytext" class="btn">Copy</a>
+    <a href="#" id="copytext" class="btn">Copy</a>
     </div>
-  </div>
   `;
 
   shortLinkSection.appendChild(HTMLSection);
+  // location.reload();
 }
 
 const APIURL = 'https://api.shrtco.de/v2/shorten?url=';
@@ -84,27 +83,26 @@ async function getShorten(urll) {
   }
   const url = document.querySelector("#url").value;
   const shortedLink = document.querySelector(".shorted-link").textContent;
+
   console.log(url);
   console.log(shortedLink);
   if (url && shortedLink) {
-    localStorage.setItem(JSON.stringify(shortedLink), JSON.stringify(url));
+    localStorage.setItem(url, JSON.stringify(shortedLink));
   }
 }
 
 for (let i = 0; i < localStorage.length; i++) {
   const lsKey = localStorage.key(i);
-  const getValue = JSON.parse(localStorage.getItem(lsKey));
+  let shortedLinkDisplay = JSON.parse(localStorage.getItem(lsKey));
 
-  var HTMLSection = document.createElement('div');
-
+  let HTMLSection = document.createElement('div');
+  HTMLSection.className = 'shorted';
   HTMLSection.innerHTML = `
-  <div class="shorted">
-    <a href="${getValue}" class="original-link">${getValue}</a>
+    <a href="${lsKey}" class="original-link">${lsKey}</a>
     <div class="shorted-link-copy">
-    <a href="${lsKey}" class="shorted-link">${lsKey}</a>
-    <a href="#" onclick="copyText()" id="copytext" class="btn">Copy</a>
+    <a href="${shortedLinkDisplay}" class="shorted-link">${shortedLinkDisplay}</a>
+    <a href="#" id="copytext" class="btn">Copy</a>
     </div>
-  </div>
   `;
 
   shortLinkSection.appendChild(HTMLSection);
