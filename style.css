@@ -373,6 +373,10 @@ img {
 #main #shorten .shorted .original-link {
   padding-bottom: 0.7rem;
   display: inline-block;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 #main #shorten .shorted .shorted-link-copy {
