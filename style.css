@@ -372,7 +372,6 @@ img {
 
 #main #shorten .shorted .original-link {
   padding-bottom: 0.7rem;
-  padding-right: 3rem;
   display: inline-block;
   width: 100%;
   text-overflow: ellipsis;
@@ -568,6 +567,7 @@ s #main #shorten .statistics > h2,
   #main #shorten .shorted .original-link {
     padding-bottom: 0rem;
     color: #232127;
+    padding-right: 3rem;
   }
   #main #shorten .shorted .shorted-link-copy {
     border-top: none;

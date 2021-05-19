@@ -320,7 +320,6 @@ img {
 
       .original-link {
         padding-bottom: 0.7rem;
-        padding-right: 3rem;
         display: inline-block;
         width: 100%;
         text-overflow: ellipsis;
@@ -491,6 +490,7 @@ img {
         .original-link {
           padding-bottom: 0rem;
           color: $-N-Very-Dark-Violet;
+          padding-right: 3rem;
         }
 
         .shorted-link-copy {
