@@ -372,6 +372,7 @@ img {
 
 #main #shorten .shorted .original-link {
   padding-bottom: 0.7rem;
+  padding-right: 3rem;
   display: inline-block;
   width: 100%;
   text-overflow: ellipsis;

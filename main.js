@@ -109,7 +109,7 @@ function getTasks() {
     tasks = JSON.parse(localStorage.getItem('tasks'));
   }
 
-  tasks.forEach((task) => {
+  tasks.reverse().forEach((task) => {
     let HTMLSection = document.createElement('div');
     HTMLSection.className = 'shorted';
     HTMLSection.innerHTML = `
