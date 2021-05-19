@@ -61,49 +61,76 @@ function createLinkSection(link) {
     <a href="${url.value}" class="original-link">${url.value}</a>
     <div class="shorted-link-copy">
     <a href="${link.result.full_short_link}" class="shorted-link">${link.result.full_short_link}</a>
-    <a href="#" id="copytext" class="btn">Copy</a>
+    <a href="#" onclick="copyText()" id="copytext" class="btn btnCopy">Copy</a>
     </div>
   `;
 
   shortLinkSection.appendChild(HTMLSection);
-  // location.reload();
+
+  storeLink(url.value, link.result.full_short_link);
 }
 
 const APIURL = 'https://api.shrtco.de/v2/shorten?url=';
 
-async function getShorten(urll) {
+async function getShorten(OriginURL) {
   try {
     const {
       data
-    } = await axios(APIURL + urll);
+    } = await axios(APIURL + OriginURL);
 
     createLinkSection(data);
   } catch (error) {
     console.log(error)
   }
-  const url = document.querySelector("#url").value;
-  const shortedLink = document.querySelector(".shorted-link").textContent;
-
-  console.log(url);
-  console.log(shortedLink);
-  if (url && shortedLink) {
-    localStorage.setItem(url, JSON.stringify(shortedLink));
-  }
+  getTasks();
 }
 
-for (let i = 0; i < localStorage.length; i++) {
-  const lsKey = localStorage.key(i);
-  let shortedLinkDisplay = JSON.parse(localStorage.getItem(lsKey));
+function getTasks() {
+  let tasks;
+  if (localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
 
-  let HTMLSection = document.createElement('div');
-  HTMLSection.className = 'shorted';
-  HTMLSection.innerHTML = `
-    <a href="${lsKey}" class="original-link">${lsKey}</a>
-    <div class="shorted-link-copy">
-    <a href="${shortedLinkDisplay}" class="shorted-link">${shortedLinkDisplay}</a>
-    <a href="#" id="copytext" class="btn">Copy</a>
-    </div>
-  `;
+  tasks.forEach((task) => {
+    for (const key of Object.keys(task)) {
+      let HTMLSection = document.createElement('div');
+      HTMLSection.className = 'shorted';
+      HTMLSection.innerHTML = `
+        <a href="${task[key]}" class="original-link">${task[key]}</a>
+        <div class="shorted-link-copy">
+        <a href="${task[key]}" class="shorted-link">${task[key]}</a>
+        <a href="#" onclick="copyText()" id="copytext" class="btn btnCopy">Copy</a>
+        </div>`;
 
-  shortLinkSection.appendChild(HTMLSection);
+      shortLinkSection.appendChild(HTMLSection);
+    }
+  });
+}
+// for (let index = 0; index < tasks.length; index++) {
+//   console.log(tasks[index]);
+//   let task = tasks[index];
+//   for (let i = 0; i < task.length; i++) {
+//     console.log(task[i]);
+//   }
+// }
+
+
+
+function storeLink(url, shortedLink) {
+  let task = {
+    url,
+    shortedLink
+  };
+  let tasks;
+  if (localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+  tasks.push(task);
+
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  location.reload();
 }
