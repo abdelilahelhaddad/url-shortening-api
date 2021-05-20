@@ -624,11 +624,15 @@ footer {
         text-align: left;
 
         li {
+          &:first-child a:hover {
+            color: #FFF;
+          }
 
           a:hover {
             color: $-P-Cyan;
           }
         }
+
       }
 
       .socials {

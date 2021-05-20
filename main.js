@@ -60,8 +60,8 @@ function createLinkSection(link) {
   HTMLSection.innerHTML = `
     <a href="${url.value}" class="original-link">${url.value}</a>
     <div class="shorted-link-copy">
-    <a href="${link.result.full_short_link}" class="shorted-link">${link.result.full_short_link}</a>
-    <a href="#" onclick="copyText()" id="copytext" class="btn btnCopy">Copy</a>
+    <a id="foo" href="${link.result.full_short_link}" class="shorted-link">${link.result.full_short_link}</a>
+    <a href="#" id="copytext" data-clipboard-target="#foo" class="btn btnCopy">Copy</a>
     </div>
   `;
 
@@ -115,8 +115,8 @@ function getTasks() {
     HTMLSection.innerHTML = `
       <a href="${task.url}" class="original-link">${task.url}</a>
       <div class="shorted-link-copy">
-      <a href="${task.shortedLink}" class="shorted-link">${task.shortedLink}</a>
-      <a href="#" onclick="copyText()" id="copytext" class="btn btnCopy">Copy</a>
+      <a id="CopyLink" value="${task.shortedLink}" href="${task.shortedLink}" class="shorted-link">${task.shortedLink}</a>
+      <a href="#" id="copytext" data-clipboard-target="#CopyLink" class="btn btnCopy">Copy</a>
       </div>`;
 
     shortLinkSection.appendChild(HTMLSection);
@@ -124,3 +124,19 @@ function getTasks() {
 }
 
 getTasks();
+
+shortLinkSection.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("btnCopy")) return;
+
+  const text = e.target.closest(".shorted-link-copy").querySelector(".shorted-link").innerText;
+
+  const inputElement = document.createElement('input');
+  inputElement.setAttribute("value", text);
+  document.body.appendChild(inputElement);
+  inputElement.select();
+  document.execCommand("copy");
+  inputElement.parentNode.removeChild(inputElement);
+
+  e.target.textContent = "Copied!";
+  e.target.style.background = "hsl(257, 27%, 26%)";
+})

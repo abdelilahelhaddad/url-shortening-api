@@ -694,6 +694,9 @@ footer .container .socials a {
   footer .container ul {
     text-align: left;
   }
+  footer .container ul li:first-child a:hover {
+    color: #FFF;
+  }
   footer .container ul li a:hover {
     color: #66cccc;
   }
