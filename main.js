@@ -60,8 +60,8 @@ function createLinkSection(link) {
   HTMLSection.innerHTML = `
     <a href="${url.value}" class="original-link">${url.value}</a>
     <div class="shorted-link-copy">
-    <a id="foo" href="${link.result.full_short_link}" class="shorted-link">${link.result.full_short_link}</a>
-    <a href="#" id="copytext" data-clipboard-target="#foo" class="btn btnCopy">Copy</a>
+    <a href="${link.result.full_short_link}" class="shorted-link">${link.result.full_short_link}</a>
+    <a href="#" id="copytext" dclass="btn btnCopy">Copy</a>
     </div>
   `;
 
@@ -115,8 +115,8 @@ function getTasks() {
     HTMLSection.innerHTML = `
       <a href="${task.url}" class="original-link">${task.url}</a>
       <div class="shorted-link-copy">
-      <a id="CopyLink" value="${task.shortedLink}" href="${task.shortedLink}" class="shorted-link">${task.shortedLink}</a>
-      <a href="#" id="copytext" data-clipboard-target="#CopyLink" class="btn btnCopy">Copy</a>
+      <a id="CopyLink" href="${task.shortedLink}" class="shorted-link">${task.shortedLink}</a>
+      <a href="#" id="copytext" class="btn btnCopy">Copy</a>
       </div>`;
 
     shortLinkSection.appendChild(HTMLSection);
